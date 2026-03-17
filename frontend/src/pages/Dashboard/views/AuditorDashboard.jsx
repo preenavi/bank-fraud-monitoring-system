@@ -1,46 +1,46 @@
 import React from 'react';
-import { FileText, Clock, Archive, PieChart } from 'lucide-react';
+import { Search, Globe, Archive, AlertTriangle } from 'lucide-react';
 import StatsCard from '../../../components/Cards/StatsCard';
 import Charts from '../../../components/Charts/Charts';
 import FraudSummary from '../../../components/FraudSummary/FraudSummary';
 
 export default function AuditorDashboard() {
   const barData = [
-    { name: 'Jan', value: 80 },
-    { name: 'Feb', value: 95 },
-    { name: 'Mar', value: 110 },
-    { name: 'Apr', value: 105 },
-    { name: 'May', value: 130 },
+    { name: 'Jan', value: 3 },
+    { name: 'Feb', value: 8 },
+    { name: 'Mar', value: 12 },
+    { name: 'Apr', value: 5 },
+    { name: 'May', value: 14 },
   ];
 
   const lineData = [
-    { name: 'Q1', Audits: 120, Findings: 15 },
-    { name: 'Q2', Audits: 150, Findings: 22 },
-    { name: 'Q3', Audits: 110, Findings: 10 },
-    { name: 'Q4', Audits: 180, Findings: 18 },
+    { name: 'Q1', 'Audit Triggers': 120, 'Verified Fraud Rings': 4 },
+    { name: 'Q2', 'Audit Triggers': 150, 'Verified Fraud Rings': 2 },
+    { name: 'Q3', 'Audit Triggers': 110, 'Verified Fraud Rings': 6 },
+    { name: 'Q4', 'Audit Triggers': 180, 'Verified Fraud Rings': 3 },
   ];
 
   const auditLogData = [
-    { id: 'AUD-9021', user: 'System (Auto)', amount: 'N/A', risk: 'Medium', status: 'Resolved', date: 'Yesterday' },
-    { id: 'AUD-9022', user: 'Branch Mgr A', amount: '$150,000.00', risk: 'High', status: 'Investigating', date: '2 days ago' },
-    { id: 'AUD-9023', user: 'Compliance Officer', amount: 'N/A', risk: 'Low', status: 'Resolved', date: 'Last week' },
+    { id: 'FRD-9021', user: 'Subject: Employee A.J', amount: 'N/A', risk: 'Medium', status: 'Resolved', date: 'Yesterday' },
+    { id: 'FRD-9022', user: 'Subject: Branch 4 Team', amount: '$1.2M', risk: 'High', status: 'Investigating', date: '2 days ago' },
+    { id: 'FRD-9023', user: 'Subject: Cross-Border Transfers', amount: 'N/A', risk: 'High', status: 'Pending', date: 'Last week' },
   ];
 
   return (
     <>
       <div className="stats-grid">
-        <StatsCard title="Total Audits Completed" value="542" icon={FileText} percentageChange={15.2} trendingUp={true} />
-        <StatsCard title="Unresolved High-Risk Cases" value="8" icon={Archive} percentageChange={2.1} trendingUp={false} />
-        <StatsCard title="Avg Resolution Time" value="4.2 Days" icon={Clock} percentageChange={1.1} trendingUp={true} />
-        <StatsCard title="Compliance Score" value="94%" icon={PieChart} percentageChange={0.5} trendingUp={true} />
+        <StatsCard title="Cross-Branch Mules Detected" value="14" icon={Globe} percentageChange={15.2} trendingUp={true} />
+        <StatsCard title="Regulatory Violations Flagged" value="2" icon={AlertTriangle} percentageChange={50.0} trendingUp={false} />
+        <StatsCard title="Unresolved Internal Fraud" value="8" icon={Archive} percentageChange={2.1} trendingUp={false} />
+        <StatsCard title="Employee Collusion Risk" value="4.2%" icon={Search} percentageChange={0.5} trendingUp={false} />
       </div>
 
       <div className="dashboard-content">
         <Charts 
-          barChartTitle="Fraud Audits by Month" barChartData={barData}
-          lineChartTitle="Quarterly Audits vs Findings" lineChartData={lineData} 
+          barChartTitle="Employee Investigations Opened" barChartData={barData}
+          lineChartTitle="Audit Triggers vs Verified Fraud Rings" lineChartData={lineData} 
         />
-        <FraudSummary title="Deep-Dive Investigation Logs" data={auditLogData} />
+        <FraudSummary title="Deep-Dive Internal Fraud Investigations" data={auditLogData} />
       </div>
     </>
   );

@@ -1,18 +1,21 @@
 .stats-card {
-  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   gap: 12px;
-  border: 1px solid #eef2f6;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .stats-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 15px rgba(79, 209, 197, 0.15);
+  border-color: rgba(79, 209, 197, 0.3);
 }
 
 .stats-card-header {
@@ -25,14 +28,14 @@
   margin: 0;
   font-size: 14px;
   font-weight: 600;
-  color: #64748b;
+  color: #a0aec0;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
 
 .stats-card-icon {
-  color: #3b82f6;
-  background-color: #eff6ff;
+  color: #4fd1c5;
+  background-color: rgba(79, 209, 197, 0.1);
   border-radius: 8px;
   padding: 8px;
   display: flex;
@@ -43,7 +46,7 @@
 .stats-card-value {
   font-size: 28px;
   font-weight: 700;
-  color: #1e293b;
+  color: #ffffff;
 }
 
 .stats-card-trend {
@@ -59,13 +62,13 @@
 }
 
 .trend-up .trend-percentage {
-  color: #10b981;
+  color: #48bb78;
 }
 
 .trend-down .trend-percentage {
-  color: #ef4444;
+  color: #f56565;
 }
 
 .trend-label {
-  color: #94a3b8;
+  color: #718096;
 }

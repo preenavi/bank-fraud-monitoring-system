@@ -1,9 +1,11 @@
 .fraud-summary-container {
-  background-color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 12px;
   padding: 24px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  border: 1px solid #eef2f6;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
   margin-top: 24px;
 }
 
@@ -18,13 +20,13 @@
   margin: 0;
   font-size: 16px;
   font-weight: 600;
-  color: #1e293b;
+  color: #ffffff;
 }
 
 .view-all-btn {
   background: none;
   border: none;
-  color: #3b82f6;
+  color: #4fd1c5;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
@@ -46,19 +48,19 @@
 
 .fraud-table th {
   padding: 12px 16px;
-  background-color: #f8fafc;
-  color: #64748b;
+  background: rgba(0, 0, 0, 0.2);
+  color: #a0aec0;
   font-weight: 600;
   font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .fraud-table td {
   padding: 16px;
-  border-bottom: 1px solid #f1f5f9;
-  color: #334155;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  color: #e2e8f0;
   font-size: 14px;
 }
 
@@ -67,7 +69,7 @@
 }
 
 .fraud-table tbody tr:hover {
-  background-color: #f8fafc;
+  background-color: rgba(255, 255, 255, 0.05);
 }
 
 .badge {
@@ -79,13 +81,13 @@
   text-align: center;
 }
 
-/* Badge colors */
-.bg-red-100 { background-color: #fee2e2; }
-.text-red-700 { color: #b91c1c; }
-.bg-yellow-100 { background-color: #fef3c7; }
-.text-yellow-700 { color: #b45309; }
-.bg-green-100 { background-color: #d1fae5; }
-.text-green-700 { color: #047857; }
+/* Badge colors tailored for dark mode */
+.bg-red-100 { background-color: rgba(245, 101, 101, 0.2); }
+.text-red-700 { color: #f56565; }
+.bg-yellow-100 { background-color: rgba(236, 201, 75, 0.2); }
+.text-yellow-700 { color: #ecc94b; }
+.bg-green-100 { background-color: rgba(72, 187, 120, 0.2); }
+.text-green-700 { color: #48bb78; }
 
 /* Status styling */
 .status-cell {
@@ -94,11 +96,11 @@
   gap: 8px;
 }
 
-.text-green-500 { color: #22c55e; }
-.text-yellow-500 { color: #eab308; }
-.text-red-500 { color: #ef4444; }
+.text-green-500 { color: #48bb78; }
+.text-yellow-500 { color: #ecc94b; }
+.text-red-500 { color: #f56565; }
 
-/* Text utilities */
+/* Text utilities for dark mode */
 .font-medium { font-weight: 500; }
-.text-slate-500 { color: #64748b; }
-.text-slate-700 { color: #334155; }
+.text-slate-500 { color: #a0aec0; }
+.text-slate-700 { color: #cbd5e0; }

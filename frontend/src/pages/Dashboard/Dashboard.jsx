@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import EmployeeDashboard from './views/EmployeeDashboard';
 import ManagerDashboard from './views/ManagerDashboard';
 import AuditorDashboard from './views/AuditorDashboard';
@@ -6,8 +7,9 @@ import AdminDashboard from './views/AdminDashboard';
 import './Dashboard.css';
 
 export default function Dashboard() {
-  // Mock role state. In production, this would come from an AuthContext or Redux store.
-  const [userRole, setUserRole] = useState('Employee');
+  const location = useLocation();
+  // Get role directly from the router state, default to Employee if accessed directly
+  const userRole = location.state?.role || 'Employee';
 
   const renderDashboardView = () => {
     switch (userRole) {
@@ -32,18 +34,8 @@ export default function Dashboard() {
           <p className="dashboard-subtitle">Monitor and analyze activity tailored to your role</p>
         </div>
         
-        <div className="dashboard-controls" style={{ display: 'flex', gap: '12px' }}>
-          {/* Mock Role Selector Component for previewing */}
-          <select 
-            className="role-selector" 
-            value={userRole} 
-            onChange={(e) => setUserRole(e.target.value)}
-          >
-            <option value="Employee">Bank Employee Details</option>
-            <option value="Manager">Branch Manager Details</option>
-            <option value="Auditor">Auditor Details</option>
-            <option value="Admin">Admin Details</option>
-          </select>
+        <div className="dashboard-controls" style={{ display: 'flex', gap: '12px', alignItems: 'center' }}>
+          <span className="role-badge">Logged in as: {userRole}</span>
 
           {/* Regular Date Filter */}
           <select className="date-select">

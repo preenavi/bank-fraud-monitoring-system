@@ -13,11 +13,17 @@ export default function Login() {
     // Simulate login based on role. In a real app, you'd send this to an API.
     console.log('Logging in with:', { email, password, role });
 
-    // Redirect simple logic
-    if (role === 'employee' || role === 'user') {
-      navigate('/dashboard');
+    // Redirect simple logic, passing the selected role in the route state
+    if (role === 'employee') {
+      navigate('/dashboard', { state: { role: 'Employee' } });
+    } else if (role === 'manager') {
+      navigate('/dashboard', { state: { role: 'Manager' } });
+    } else if (role === 'admin') {
+      navigate('/dashboard', { state: { role: 'Admin' } });
+    } else if (role === 'auditor') {
+      navigate('/dashboard', { state: { role: 'Auditor' } });
     } else {
-      navigate('/dashboard'); // Currently routing everywhere to dashboard for demonstration
+      navigate('/dashboard', { state: { role: 'Employee' } });
     }
   };
 
@@ -65,7 +71,6 @@ export default function Login() {
               <option value="manager">Manager</option>
               <option value="admin">Admin</option>
               <option value="auditor">Auditor</option>
-              <option value="user">User</option>
             </select>
           </div>
 
