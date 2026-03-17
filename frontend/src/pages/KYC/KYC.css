@@ -1,0 +1,26 @@
+.kyc-page {
+  padding: 24px;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  color: #ffffff;
+}
+
+.page-header {
+  margin-bottom: 24px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+.page-subtitle {
+  margin: 4px 0 0 0;
+  font-size: 14px;
+  color: #a0aec0;
+}

@@ -1,0 +1,121 @@
+.kyc-records-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.table-wrapper {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  overflow-x: auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+.kyc-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.kyc-table th {
+  padding: 16px;
+  background: rgba(0, 0, 0, 0.2);
+  color: #a0aec0;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.kyc-table td {
+  padding: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  vertical-align: middle;
+}
+
+.kyc-table tr:last-child td {
+  border-bottom: none;
+}
+
+.kyc-table tbody tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.docs-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.doc-badge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  font-size: 12px;
+  color: #cbd5e0;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.badge-approved { background: rgba(72, 187, 120, 0.2); color: #48bb78; }
+.badge-pending { background: rgba(236, 201, 75, 0.2); color: #ecc94b; }
+.badge-rejected { background: rgba(245, 101, 101, 0.2); color: #f56565; }
+.badge-review { background: rgba(66, 153, 225, 0.2); color: #4299e1; }
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-approve, .btn-reject {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.btn-approve {
+  color: #48bb78;
+}
+
+.btn-approve:hover {
+  background: rgba(72, 187, 120, 0.1);
+}
+
+.btn-reject {
+  color: #f56565;
+}
+
+.btn-reject:hover {
+  background: rgba(245, 101, 101, 0.1);
+}
+
+/* Utils */
+.text-center { text-align: center; }
+.py-8 { padding-top: 32px; padding-bottom: 32px; }
+.font-mono { font-family: monospace; }
+.font-bold { font-weight: 600; }
+.text-white { color: #ffffff; }
+.text-slate-400 { color: #9ca3af; }
+.text-red-500 { color: #f56565; }
+.text-yellow-500 { color: #ecc94b; }
+.text-green-500 { color: #48bb78; }

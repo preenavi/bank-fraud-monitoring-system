@@ -1,0 +1,80 @@
+.alert-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.alert-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.alert-card.risk-high { border-left: 4px solid #f56565; }
+.alert-card.risk-medium { border-left: 4px solid #ecc94b; }
+.alert-card.risk-low { border-left: 4px solid #48bb78; }
+
+.alert-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.alert-id {
+  font-size: 12px;
+  font-weight: 600;
+  color: #a0aec0;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.badge.risk-high { background-color: rgba(245, 101, 101, 0.2); color: #f56565; }
+.badge.risk-medium { background-color: rgba(236, 201, 75, 0.2); color: #ecc94b; }
+.badge.risk-low { background-color: rgba(72, 187, 120, 0.2); color: #48bb78; }
+
+.alert-card-body h4 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.alert-card-body p {
+  margin: 0;
+  font-size: 13px;
+  color: #cbd5e0;
+}
+
+.alert-card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #a0aec0;
+}
+
+.alert-date {
+  font-size: 12px;
+  color: #718096;
+}
