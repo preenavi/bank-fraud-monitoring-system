@@ -1,0 +1,65 @@
+.charts-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 24px;
+  width: 100%;
+}
+
+.chart-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chart-title {
+  margin-top: 0;
+  margin-bottom: 24px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.chart-wrapper {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+}
+
+/* Adjust Recharts tooltip and text for dark mode */
+.recharts-text {
+  fill: #a0aec0 !important;
+}
+
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: rgba(255, 255, 255, 0.1);
+}
+
+.recharts-default-tooltip {
+  background-color: rgba(15, 32, 39, 0.9) !important;
+  border: 1px solid rgba(79, 209, 197, 0.3) !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important;
+}
+
+.recharts-tooltip-item {
+  color: #ffffff !important;
+}
+
+@media (max-width: 768px) {
+  .charts-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .chart-card {
+    height: 350px;
+  }
+}

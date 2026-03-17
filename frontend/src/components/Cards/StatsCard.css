@@ -1,0 +1,74 @@
+.stats-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 15px rgba(79, 209, 197, 0.15);
+  border-color: rgba(79, 209, 197, 0.3);
+}
+
+.stats-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stats-card-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stats-card-icon {
+  color: #4fd1c5;
+  background-color: rgba(79, 209, 197, 0.1);
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stats-card-value {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.stats-card-trend {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  gap: 6px;
+  margin-top: auto;
+}
+
+.trend-percentage {
+  font-weight: 600;
+}
+
+.trend-up .trend-percentage {
+  color: #48bb78;
+}
+
+.trend-down .trend-percentage {
+  color: #f56565;
+}
+
+.trend-label {
+  color: #718096;
+}
