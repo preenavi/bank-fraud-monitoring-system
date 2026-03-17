@@ -6,6 +6,7 @@ import Employees from "./pages/Employees/Employees";
 import FraudAlerts from "./pages/FraudAlerts/FraudAlerts";
 import KYC from "./pages/KYC/KYC";
 import Reports from "./pages/Reports/Reports";
+import EmployeeMonitor from "./pages/Employees/EmployeeMonitor";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/fraud-alerts" element={<FraudAlerts />} />
         <Route path="/kyc" element={<KYC />} />
         <Route path="/reports" element={<Reports />} />
+        <Route path="/monitor" element={<EmployeeMonitor />} />
       </Routes>
     </BrowserRouter>
   );
