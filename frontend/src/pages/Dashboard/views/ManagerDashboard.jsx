@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Eye, ShieldAlert, AlertOctagon, UserX, Users } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Eye, ShieldAlert, AlertOctagon, UserX, Users, ArrowRight } from 'lucide-react';
 import StatsCard from '../../../components/Cards/StatsCard';
 import Charts from '../../../components/Charts/Charts';
 import FraudSummary from '../../../components/FraudSummary/FraudSummary';
 
 export default function ManagerDashboard() {
+  const navigate = useNavigate();
+
   const barData = [
     { name: 'Mon', value: 12 },
     { name: 'Tue', value: 15 },
@@ -60,8 +62,25 @@ export default function ManagerDashboard() {
       </div>
 
       <div className="dashboard-content">
+        <div style={{ display: 'flex', justifyContent: 'flex-end', gap: '12px', marginBottom: '-12px' }}>
+          <button 
+            className="action-btn investigate" 
+            onClick={() => navigate('/kyc')}
+            style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
+          >
+            Review KYC Submissions <ArrowRight size={16} />
+          </button>
+          <button 
+            className="action-btn resolve" 
+            onClick={() => navigate('/fraud-alerts')}
+            style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
+          >
+            Go to Fraud Operations Inbox <ArrowRight size={16} />
+          </button>
+        </div>
+
         <Charts 
-          barChartTitle="Daily Branch SARs Filed" barChartData={barData}
+          barChartTitle="Employee Overrides (This Month)" barChartData={barData}
           lineChartTitle="Employee Overrides vs Escalated Risk" lineChartData={lineData} 
         />
         <FraudSummary title="Escalated Anomalies (Req. Manager Approval)" data={escalatedAlerts} />

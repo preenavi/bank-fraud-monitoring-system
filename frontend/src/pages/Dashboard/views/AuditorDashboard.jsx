@@ -1,10 +1,13 @@
 import React from 'react';
-import { Search, Globe, Archive, AlertTriangle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { Search, Globe, Archive, AlertTriangle, ArrowRight } from 'lucide-react';
 import StatsCard from '../../../components/Cards/StatsCard';
 import Charts from '../../../components/Charts/Charts';
 import FraudSummary from '../../../components/FraudSummary/FraudSummary';
 
 export default function AuditorDashboard() {
+  const navigate = useNavigate();
+
   const barData = [
     { name: 'Jan', value: 3 },
     { name: 'Feb', value: 8 },
@@ -36,8 +39,18 @@ export default function AuditorDashboard() {
       </div>
 
       <div className="dashboard-content">
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '-12px' }}>
+          <button 
+            className="action-btn resolve" 
+            onClick={() => navigate('/reports')}
+            style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer', background: 'linear-gradient(90deg, #4fd1c5, #319795)', color: 'white', border: 'none' }}
+          >
+            View Executive Fraud Reports <ArrowRight size={16} />
+          </button>
+        </div>
+
         <Charts 
-          barChartTitle="Employee Investigations Opened" barChartData={barData}
+          barChartTitle="Cross-Branch Mule Networks Detected" barChartData={barData}
           lineChartTitle="Audit Triggers vs Verified Fraud Rings" lineChartData={lineData} 
         />
         <FraudSummary title="Deep-Dive Internal Fraud Investigations" data={auditLogData} />

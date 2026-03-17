@@ -1,10 +1,13 @@
 import React from 'react';
-import { ShieldAlert, BookOpen, AlertTriangle, UserCheck } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
+import { ShieldAlert, BookOpen, AlertTriangle, UserCheck, ArrowRight } from 'lucide-react';
 import StatsCard from '../../../components/Cards/StatsCard';
 import Charts from '../../../components/Charts/Charts';
 import FraudSummary from '../../../components/FraudSummary/FraudSummary';
 
 export default function EmployeeDashboard() {
+  const navigate = useNavigate();
+
   const barData = [
     { name: 'Mon', value: 4 },
     { name: 'Tue', value: 7 },
@@ -36,6 +39,16 @@ export default function EmployeeDashboard() {
       </div>
 
       <div className="dashboard-content">
+        <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '-12px' }}>
+          <button 
+            className="action-btn investigate" 
+            onClick={() => navigate('/kyc')}
+            style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}
+          >
+            Go to KYC Monitoring <ArrowRight size={16} />
+          </button>
+        </div>
+
         <Charts 
           barChartTitle="My Fraud Flagging Activity (This Week)" barChartData={barData}
           lineChartTitle="My Flags vs Compliance Clearance" lineChartData={lineData} 
